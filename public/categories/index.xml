@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Jairaj Kumar | Software Engineer</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>http://localhost:1313/me/categories/</link>
     <description>Recent content in Categories on Jairaj Kumar | Software Engineer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 May 2025 03:49:40 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/me/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artificial-Intelligence</title>
-      <link>http://localhost:1313/categories/artificial-intelligence/</link>
+      <link>http://localhost:1313/me/categories/artificial-intelligence/</link>
       <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/categories/artificial-intelligence/</guid>
+      <guid>http://localhost:1313/me/categories/artificial-intelligence/</guid>
       <description></description>
     </item>
     <item>
       <title>Generative-Ai</title>
-      <link>http://localhost:1313/categories/generative-ai/</link>
+      <link>http://localhost:1313/me/categories/generative-ai/</link>
       <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/categories/generative-ai/</guid>
+      <guid>http://localhost:1313/me/categories/generative-ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorials</title>
-      <link>http://localhost:1313/categories/tutorials/</link>
+      <link>http://localhost:1313/me/categories/tutorials/</link>
       <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/categories/tutorials/</guid>
+      <guid>http://localhost:1313/me/categories/tutorials/</guid>
       <description></description>
     </item>
     <item>
       <title>Vector-Databases</title>
-      <link>http://localhost:1313/categories/vector-databases/</link>
+      <link>http://localhost:1313/me/categories/vector-databases/</link>
       <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/categories/vector-databases/</guid>
+      <guid>http://localhost:1313/me/categories/vector-databases/</guid>
       <description></description>
     </item>
   </channel>
