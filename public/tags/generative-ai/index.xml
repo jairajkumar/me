@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generative AI on Jairaj Kumar | Software Engineer</title>
+    <link>http://localhost:1313/tags/generative-ai/</link>
+    <description>Recent content in Generative AI on Jairaj Kumar | Software Engineer</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Jan 2025 03:49:40 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/generative-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases</title>
+      <link>http://localhost:1313/blogs/building_rag/</link>
+      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/building_rag/</guid>
+      <description>&lt;!-- +++&#xA;title = &#39;Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases&#39;&#xA;date = &#34;2025-01-04T03:49:40+05:30&#34;&#xA;author = &#34;Jairaj Kumar&#34; # Add your name here&#xA;draft = false # Make sure draft is false if you want it published&#xA;+++ --&gt;&#xA;&lt;p&gt;Large Language Models (LLMs) like Google’s &lt;strong&gt;Gemini&lt;/strong&gt; have revolutionized how we interact with machines—capable of understanding prompts, generating diverse content formats, answering complex questions, and more. However, even the most sophisticated LLMs come with inherent limitations:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

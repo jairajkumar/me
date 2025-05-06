@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gpt-3 on Jairaj Kumar | Software Engineer</title>
+    <link>http://localhost:1313/tags/gpt-3/</link>
+    <description>Recent content in Gpt-3 on Jairaj Kumar | Software Engineer</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Jan 2025 03:49:40 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gpt-3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases</title>
+      <link>http://localhost:1313/blogs/building_rag/</link>
+      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/building_rag/</guid>
+      <description>&lt;p&gt;Large Language Models (LLMs) like Google’s &lt;strong&gt;Gemini&lt;/strong&gt; have revolutionized how we interact with machines—capable of understanding prompts, generating diverse content formats, answering complex questions, and more. However, even the most sophisticated LLMs come with inherent limitations:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Knowledge Cutoff:&lt;/strong&gt; They lack awareness of events or data developed after their training date.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hallucination Risk:&lt;/strong&gt; They may generate responses that are plausible-sounding but factually incorrect.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No Access to Private Data:&lt;/strong&gt; They can’t natively access your proprietary documents, internal files, or niche knowledge bases.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;This is where &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt; comes in—a technique that enhances LLMs by grounding their responses in external, up-to-date, and domain-specific information. When paired with a &lt;strong&gt;vector database&lt;/strong&gt;, Gemini becomes a much more powerful tool for building intelligent, reliable, and context-aware applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,284 @@
+baseURL: https://example.org/ # Replace with your actual domain
+languageCode: en-us
+title: "Jairaj Kumar | Software Engineer" # Updated Title
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+#services:
+  #googleAnalytics:
+    #id: G-MEASUREMENT_ID # Add your Google Analytics ID if needed
+  #disqus:
+    #shortname: your-disqus-shortname # Add your Disqus shortname if needed
+
+pagination:
+  pagerSize: 6
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+    - identifier: Categories # Uncomment if you plan to have categories
+      name: Categories
+      title: Categories
+      url: /categories
+      weight: 2
+    - identifier: tags
+      name: Tags
+      title: Tags
+      url: /tags
+      weight: 3
+    # - identifier: gallery # Uncomment if you plan to have a gallery
+    #   name: Gallery
+    #   title: Gallery Page
+    #   url: /gallery
+    #   weight: 2
+    # Add other menu items as needed
+
+params:
+  title: "Jairaj Kumar" # Your Name
+  description: "Software Engineer specializing in distributed systems, media streaming, and DevOps." # Updated description based on profile
+  # staticPath: ""
+  favicon: "/fav.png" # Replace with your favicon path
+
+  useBootstrapCDN: false
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME" # If using Cloudinary
+  mathjax: false
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  # color preference (customize if desired)
+  # color:
+  #   ...
+  #   darkmode:
+  #     ...
+
+  navbar:
+    align: ms-auto
+    # brandLogo: "/logo.png"
+    # showBrandLogo: false
+    brandName: "Jairaj Kumar" # Your Name
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    enableSeparator: true
+    menus: # Keep sections enabled based on your content
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: true # Disabled as no specific projects listed, can enable later
+      disableAchievements: true # Disabled as no specific achievements listed, can enable later
+      disableContact: false
+
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Jairaj Kumar." # Your Name
+    subtitle: "Software Engineer | Distributed Systems | Media Streaming | DevOps" # Updated subtitle based on profile/skills
+    content: "Adept at designing, developing, troubleshooting, and debugging software applications and systems. Passionate about optimizing scalable architectures and solving complex engineering challenges." # Shortened profile
+    image: /images/me.jpg # Replace with your hero image path
+    bottomImage:
+      enable: true
+    # roundImage: false
+    button: # Optional Resume Button
+      enable: true
+      name: "Resume"
+      url: "/JairajKumarResume_Main2.pdf" # Link to your resume PDF if you place it in static folder
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-linkedin # LinkedIn
+          url: https://linkedin.com/in/jairaj-kumar/ # Your LinkedIn URL
+        # - icon: fab fa-github # Add GitHub if you have one
+        #   url: https://github.com/yourusername
+      # customIcons:
+      #   - icon: /fav.png
+      #     url: "https://example.com"
+
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/jairajround.png" # Replace with your photo path
+    content: |- # Expanded profile
+      I am a Software Engineer skilled in designing, developing, troubleshooting, and debugging software applications and systems.
+      I have a proven ability to build enhancements within existing software architectures, with expertise in distributed systems, media streaming, and DevOps.
+      I am passionate about optimizing scalable architectures and solving complex engineering challenges involving applications, databases, and networks. Currently working at Jio Platforms Limited (JioMeet).
+
+    skills:
+      enable: true
+      title: "Technologies I work with:"
+      items: # Populated from skills section
+        - "Python"
+        - "Javascript / TypeScript"
+        - "Node.js / Express"
+        - "C++"
+        - "Bash"
+        - "REST APIs"
+        - "WebSocket"
+        - "MongoDB / MySQL"
+        - "Redis"
+        - "Docker / Kubernetes"
+        - "GCP / Azure "
+        - "Linux"
+        - "CI/CD (Azure Pipelines)"
+        - "Data Structures & Algorithms"
+        - "React.js" # Added from Cognizant Internship
+
+  experience:
+    enable: true
+    # title: "Work Experience" # Default is "Experience"
+    items:
+      - job: "Software Development Engineer 1"
+        company: "Jio Platforms Limited"
+        # companyUrl: "https://www.jio.com/" # Add company URL if desired
+        date: "October 2023 - Present"
+        # featuredLink:
+        #   enable: false
+        content: |
+          - Designed, developed, and maintained key features for JioMeet & JioEvents Media Engine.
+          - Developed a native recording microservice, reducing server costs by 70% and latency by 60%.
+          - Implemented a reusable Load Balancer SDK, improving performance and achieving 99.99% availability.
+          - Integrated real-time transcription service for JioMeet.
+          - Engineered robust P2P architecture using TURN server technology.
+          - Led media engine and GCP to self-hosted infrastructure migrations.
+          - Developed automated CI/CD pipelines using Bash and Azure agents.
+          - Diagnosed and resolved critical production issues (memory leaks, high CPU, etc.) using monitoring tools and RCA, decreasing CSM issues by 75%.
+
+      - job: "Intern"
+        company: "Cognizant Technology Solutions"
+        # companyUrl: "https://www.cognizant.com/" # Add company URL if desired
+        date: "January 2023 - May 2023"
+        content: |
+          - Contributed to developing and debugging features for a MERN stack web application.
+          - Implemented dynamic data loading and booking functionalities using React.
+
+      - job: "Data Science Intern"
+        company: "Innomatics Research Lab"
+        # companyUrl: "" # Add company URL if desired
+        date: "April 2021 - July 2021"
+        content: |
+          - Contributed to the design and development of a music recommender system application.
+          - Utilized collaborative and content-based filtering techniques to mitigate the cold start issue.
+
+  education:
+    enable: true
+    # title: "Education"
+    items:
+      - title: "B.E.(Hons) Electronics and Telecommunication"
+        school:
+          name: "Savitribai Phule Pune University"
+          # url: "" # Add university URL if desired
+        date: "July 2019 - July 2023"
+        # GPA: "" # Add GPA if desired
+        content: |-
+          Honours in Data Science.
+      
+          **Relevant Coursework:** Data Structures and Algorithms, Database Management System, Java, OOPs, Python, Cloud Computing, Data Science and Visualization, Statistics and Machine Learning
+
+  # Achievements Section - Disabled as no specific achievements listed in the resume
+  # achievements:
+  #  enable: true
+  #  items:
+  #    - title: Example Achievement
+  #      content: Description of achievement.
+  #      url: https://example.com
+  #      image: /images/achievement.jpg
+
+  # Projects Section - Disabled as no specific projects listed in the resume
+  # projects:
+  #  enable: true
+  #  items:
+  #    - title: Example Project
+  #      content: Description of the project.
+  #      image: /images/projects/project.png
+  #      featured:
+  #        name: Live Demo
+  #        link: https://example.com
+  #      badges:
+  #        - "Tech 1"
+  #        - "Tech 2"
+  #      links:
+  #        - icon: fab fa-github
+  #          url: https://github.com/yourusername/project
+
+  contact:
+    enable: true
+    # title: "Get In Touch"
+    content: My inbox is always open. Feel free to reach out if you have any questions or just want to connect!
+    btnName: Mail Me
+    btnLink: "mailto:jairajkumar3105@gmail.com" # Your Email
+    # formspree: # Uncomment and configure if using Formspree
+    #   enable: true
+    #   formId: abcdefgh
+
+  footer:
+    recentPosts: # Configure if you have a blog section
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true # Disabled as no blog content assumed yet
+      disableFeaturedImage: false
+
+    socialNetworks: # Add your social links
+      # github: https://github.com/yourusername # Add GitHub if you have one
+      linkedin: https://linkedin.com/in/jairaj-kumar/
+      # twitter: https://twitter.com/yourusername
+      # instagram: https://instagram.com/yourusername
+      # facebook: https://facebook.com/yourusername
+
+  listPages:
+    disableFeaturedImage: false
+
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -|
+  #  <script type="text/javascript"></script>
