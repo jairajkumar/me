@@ -80,6 +80,22 @@ params:
   #   darkmode:
   #     ...
 
+  color:
+  #   textColor: "#252934" # Dark Gray for text
+  #   secondaryTextColor: "#5C5D5E" # Medium Gray for secondary text
+  #   backgroundColor: "#F0F2F5" # Very Light Gray-Blue for main background
+  #   secondaryBackgroundColor: "#FFFFFF" # White for card backgrounds, etc.
+    primaryColor: "#2A2A2A" # Light Gray for primary accents
+  #   secondaryColor: "#6c757d" # Standard Bootstrap Gray for secondary accents
+
+    darkmode:
+  #     textColor: "#EAEAEA" # Light Gray for text
+  #     secondaryTextColor: "#B0B0B0" # Medium-Light Gray for secondary text
+  #     backgroundColor: "#1A1A1A" # Very Dark Gray for main background
+  #     secondaryBackgroundColor: "#2C2C2C" # Dark Gray for card backgrounds, etc.
+      # primaryColor: "#F9FAFB" # Almost White for primary accents
+  #     secondaryColor: "#6C757D" # Standard Bootstrap Gray for secondary accents
+
   navbar:
     align: ms-auto
     # brandLogo: "/logo.png"

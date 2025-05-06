@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jairaj Kumar | Software Engineer</title>
-    <link>http://localhost:1313/me/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Jairaj Kumar | Software Engineer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 May 2025 03:49:40 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/me/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://localhost:1313/me/blogs/building_rag/</link>
+      <title>Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases</title>
+      <link>http://localhost:1313/blogs/building_rag/</link>
       <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/me/blogs/building_rag/</guid>
-      <description>&lt;h1 id=&#34;building-powerful-retrieval-augmented-generation-rag-applications-with-vector-databases&#34;&gt;Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases&lt;/h1&gt;&#xA;&lt;p&gt;Large Language Models (LLMs) like Google’s &lt;strong&gt;Gemini&lt;/strong&gt; have revolutionized how we interact with machines—capable of understanding prompts, generating diverse content formats, answering complex questions, and more. However, even the most sophisticated LLMs come with inherent limitations:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Knowledge Cutoff:&lt;/strong&gt; They lack awareness of events or data developed after their training date.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hallucination Risk:&lt;/strong&gt; They may generate responses that are plausible-sounding but factually incorrect.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No Access to Private Data:&lt;/strong&gt; They can’t natively access your proprietary documents, internal files, or niche knowledge bases.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;This is where &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt; comes in—a technique that enhances LLMs by grounding their responses in external, up-to-date, and domain-specific information. When paired with a &lt;strong&gt;vector database&lt;/strong&gt;, Gemini becomes a much more powerful tool for building intelligent, reliable, and context-aware applications.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blogs/building_rag/</guid>
+      <description>&lt;p&gt;Large Language Models (LLMs) like Google’s &lt;strong&gt;Gemini&lt;/strong&gt; have revolutionized how we interact with machines—capable of understanding prompts, generating diverse content formats, answering complex questions, and more. However, even the most sophisticated LLMs come with inherent limitations:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Knowledge Cutoff:&lt;/strong&gt; They lack awareness of events or data developed after their training date.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hallucination Risk:&lt;/strong&gt; They may generate responses that are plausible-sounding but factually incorrect.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No Access to Private Data:&lt;/strong&gt; They can’t natively access your proprietary documents, internal files, or niche knowledge bases.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;This is where &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt; comes in—a technique that enhances LLMs by grounding their responses in external, up-to-date, and domain-specific information. When paired with a &lt;strong&gt;vector database&lt;/strong&gt;, Gemini becomes a much more powerful tool for building intelligent, reliable, and context-aware applications.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
-      <link>http://localhost:1313/me/blogs/ai-agents-replace-saas/</link>
+      <title>How AI Agents Will Replace SaaS and Transform Database Management</title>
+      <link>http://localhost:1313/blogs/ai-agents-replace-saas/</link>
       <pubDate>Mon, 20 Jan 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/me/blogs/ai-agents-replace-saas/</guid>
-      <description>&lt;h1 id=&#34;how-ai-agents-will-replace-saas-and-transform-database-management&#34;&gt;How AI Agents Will Replace SaaS and Transform Database Management&lt;/h1&gt;&#xA;&lt;p&gt;AI technology is revolutionizing software, and &lt;strong&gt;AI agents&lt;/strong&gt; are at the forefront of this transformation. Unlike traditional SaaS applications, which require users to manually navigate dashboards and perform repetitive tasks, AI agents operate &lt;strong&gt;autonomously&lt;/strong&gt;. They can &lt;strong&gt;perceive&lt;/strong&gt;, &lt;strong&gt;reason&lt;/strong&gt;, &lt;strong&gt;act&lt;/strong&gt;, and &lt;strong&gt;learn&lt;/strong&gt;, making them highly adaptable and capable of automating complex workflows, managing data, and providing intelligent insights—all without direct human input.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blogs/ai-agents-replace-saas/</guid>
+      <description>&lt;p&gt;AI technology is revolutionizing software, and &lt;strong&gt;AI agents&lt;/strong&gt; are at the forefront of this transformation. Unlike traditional SaaS applications, which require users to manually navigate dashboards and perform repetitive tasks, AI agents operate &lt;strong&gt;autonomously&lt;/strong&gt;. They can &lt;strong&gt;perceive&lt;/strong&gt;, &lt;strong&gt;reason&lt;/strong&gt;, &lt;strong&gt;act&lt;/strong&gt;, and &lt;strong&gt;learn&lt;/strong&gt;, making them highly adaptable and capable of automating complex workflows, managing data, and providing intelligent insights—all without direct human input.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-ai-agents-are-replacing-saas&#34;&gt;Why AI Agents Are Replacing SaaS&lt;/h2&gt;&#xA;&lt;p&gt;Traditional SaaS platforms rely on structured user interactions and predefined workflows. AI agents, however, offer a more &lt;strong&gt;dynamic, personalized, and proactive approach&lt;/strong&gt;. Key advantages include:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Image Gallery</title>
-      <link>http://localhost:1313/me/gallery/</link>
+      <link>http://localhost:1313/gallery/</link>
       <pubDate>Sat, 25 Jun 2022 18:35:46 +0530</pubDate>
-      <guid>http://localhost:1313/me/gallery/</guid>
+      <guid>http://localhost:1313/gallery/</guid>
       <description></description>
     </item>
   </channel>

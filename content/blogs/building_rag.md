@@ -1,5 +1,5 @@
 ---
-title: ''
+title: 'Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases'
 date: "2025-05-01T03:49:40+05:30"
 author: "Jairaj Kumar" # Add your name here
 draft: false # Make sure draft is false if you want it published
@@ -8,7 +8,6 @@ categories: ["artificial-intelligence", "generative-ai", "vector-databases", "tu
 tags: ["AI", "rag", "vector-databases", "gemini", "llm"]
 
 ---
-# Building Powerful Retrieval-Augmented Generation (RAG) Applications with Vector Databases
 Large Language Models (LLMs) like Google’s **Gemini** have revolutionized how we interact with machines—capable of understanding prompts, generating diverse content formats, answering complex questions, and more. However, even the most sophisticated LLMs come with inherent limitations:
 
 1. **Knowledge Cutoff:** They lack awareness of events or data developed after their training date.
