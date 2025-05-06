@@ -108,9 +108,9 @@ params:
       showOnScrollUp : true
     enableSeparator: true
     menus: # Keep sections enabled based on your content
-      disableAbout: false
+      disableAbout: true
       disableExperience: false
-      disableEducation: false
+      disableEducation: true
       disableProjects: true # Disabled as no specific projects listed, can enable later
       disableAchievements: true # Disabled as no specific achievements listed, can enable later
       disableContact: false
