@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jairaj Kumar | Software Engineer</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://jairajkumar.github.io/me/tags/</link>
     <description>Recent content in Tags on Jairaj Kumar | Software Engineer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jan 2025 03:49:40 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 May 2025 03:49:40 +0530</lastBuildDate>
+    <atom:link href="https://jairajkumar.github.io/me/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
-      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <link>https://jairajkumar.github.io/me/tags/ai/</link>
+      <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
+      <guid>https://jairajkumar.github.io/me/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Gemini</title>
-      <link>http://localhost:1313/tags/gemini/</link>
-      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/tags/gemini/</guid>
+      <link>https://jairajkumar.github.io/me/tags/gemini/</link>
+      <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
+      <guid>https://jairajkumar.github.io/me/tags/gemini/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>http://localhost:1313/tags/llm/</link>
-      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <link>https://jairajkumar.github.io/me/tags/llm/</link>
+      <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
+      <guid>https://jairajkumar.github.io/me/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Rag</title>
-      <link>http://localhost:1313/tags/rag/</link>
-      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/tags/rag/</guid>
+      <link>https://jairajkumar.github.io/me/tags/rag/</link>
+      <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
+      <guid>https://jairajkumar.github.io/me/tags/rag/</guid>
       <description></description>
     </item>
     <item>
       <title>Vector-Databases</title>
-      <link>http://localhost:1313/tags/vector-databases/</link>
-      <pubDate>Sat, 04 Jan 2025 03:49:40 +0530</pubDate>
-      <guid>http://localhost:1313/tags/vector-databases/</guid>
+      <link>https://jairajkumar.github.io/me/tags/vector-databases/</link>
+      <pubDate>Thu, 01 May 2025 03:49:40 +0530</pubDate>
+      <guid>https://jairajkumar.github.io/me/tags/vector-databases/</guid>
       <description></description>
     </item>
   </channel>
