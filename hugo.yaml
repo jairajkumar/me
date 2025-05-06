@@ -1,4 +1,5 @@
-baseURL: https://jairajkumar.github.io/ # Replace with your actual domain
+# baseURL: https://jairajkumar.github.io/me/ # Replace with your actual domain
+baseURL: https://jairajkumar.netlify.app/
 languageCode: en-us
 title: "Jairaj Kumar | Software Engineer" # Updated Title
 theme: hugo-profile
