@@ -4,6 +4,17 @@ languageCode: en-us
 title: "Jairaj Kumar | Software Engineer" # Updated Title
 theme: hugo-profile
 
+markup:
+  highlight:
+    codeFences: true         # Enable True for code fences
+    guessSyntax: true        # Enable True to let Hugo guess the syntax if not specified
+    # lineNos: true            # Enable True to show line numbers
+    # noClasses: false         # Use CSS classes, not inline styles - for custom CSS
+    style: dracula    # Syntax highlighting style
+  goldmark:
+    renderer:
+      unsafe: true
+
 outputs:
   home:
     - "HTML"
@@ -23,11 +34,6 @@ enableRobotsTXT: true
 
 pagination:
   pagerSize: 6
-
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
 
 Menus:
   main:

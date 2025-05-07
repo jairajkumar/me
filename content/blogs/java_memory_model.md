@@ -1,7 +1,7 @@
 ---
 title: 'Mastering Concurrent Java: A Deep Dive into the Java Memory Model'
 date: '2025-05-07T17:14:14+05:30'
-slug: 'Java_memory_model'
+slug: 'Java-memory-model'
 author: 'Jairaj Kumar'
 categories: ["java", "backend", "concurrency", "intenals"]
 tags: ["java", "concurrency", "jvm", "memory model", "jmm"]
