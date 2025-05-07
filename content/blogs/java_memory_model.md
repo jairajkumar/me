@@ -1,15 +1,14 @@
 ---
-date: '2025-05-07T17:14:14+05:30'
-draft: False
-toc: True
-slug: 'Java_memory_model'
 title: 'Mastering Concurrent Java: A Deep Dive into the Java Memory Model'
+date: '2025-05-07T17:14:14+05:30'
+slug: 'Java_memory_model'
 author: 'Jairaj Kumar'
 categories: ["java", "backend", "concurrency", "intenals"]
 tags: ["java", "concurrency", "jvm", "memory model", "jmm"]
+toc: True
+draft: False
 
 ---
-# 
 Java's power shines in multithreaded applications, but writing correct and efficient concurrent code can feel like navigating a minefield. Threads often need to share data, yet the intricate dance between hardware optimizations and the Java Virtual Machine (JVM) can lead to insidious bugs like lost updates, stale data, and unpredictable behavior. This is where the **Java Memory Model (JMM)** steps in.
 
 The JMM is the cornerstone specification that dictates **how threads interact through memory**. It defines the rules for **synchronizing access to shared variables**, ensuring that changes made by one thread are visible to others and preventing destructive race conditions. A solid grasp of the JMM, revised in Java 1.5 and foundational to modern Java, is non-negotiable for any developer serious about building robust concurrent systems.
