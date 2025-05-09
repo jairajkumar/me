@@ -5,6 +5,8 @@ date: '2025-05-09T17:32:20+05:30'
 draft: false
 author: 'Jairaj Kumar'
 description: ''
+categories: ["java", "backend"]
+tags: ["java", "spring", "springboot", "hibernate", "gradle", "maven"]
 ---
 In the fast-paced world of software development, you're bound to hear a lot of "buzzwords." Some are fleeting trends, but others represent powerful tools and fundamental shifts that define how we build software. Today, we're diving into the Java ecosystem to decode some key terms you've likely encountered: **Spring, Spring Boot, Hibernate, Gradle, and Maven**.
 
