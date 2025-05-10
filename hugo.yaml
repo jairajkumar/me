@@ -26,6 +26,10 @@ outputs:
 
 enableRobotsTXT: true
 
+taxonomies:
+  tag: tags
+  category: categories
+
 #services:
   #googleAnalytics:
     #id: G-MEASUREMENT_ID # Add your Google Analytics ID if needed
