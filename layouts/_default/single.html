@@ -27,7 +27,7 @@
 
               {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
               <span id="readingTime">
-                {{ .Site.Params.singlePages.readTime.content | default " min read" }}
+                {{ .Site.Params.singlePages.readTime.content | default "min read" }}
               </span>
               {{ end }}
             </div>
