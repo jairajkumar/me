@@ -297,6 +297,8 @@ Key JMM constructs include:
 
 While `volatile` and `synchronized` are fundamental, the `java.util.concurrent` package offers a rich set of higher-level concurrency utilities (e.g., `ReentrantLock`, `AtomicInteger`, `ConcurrentHashMap`). These tools are also built upon the JMM's Happens-Before guarantees, providing more sophisticated and often more performant ways to manage concurrent access.
 
+To learn more about these advanced locking mechanisms, particularly the `Lock` interface and `ReentrantLock`, see our detailed post: [Unlock Thread Safety in Java: A Practical Guide to Locks](/blogs/java-locks).
+
 ## Conclusion: Taming Concurrent Complexity
 
 The Java Memory Model is the invisible contract that governs how threads behave in the presence of shared memory. Understanding the distinction between thread-private stacks and the shared heap, recognizing how hardware caching introduces visibility and ordering challenges, and mastering the JMM's solutions—`volatile` for visibility and `synchronized` for atomicity and visibility—are paramount.
