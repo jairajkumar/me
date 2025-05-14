@@ -8,8 +8,6 @@ categories: ["nodejs", "backend", "intenals"]
 tags: ["concurrency", "parallelism", "backend", "nodejs", "performance", "scalability"]
 toc: True
 ---
-## Concurrency vs. Parallelism: Architecting Backend Systems That Don't Suck
-
 Look, as backend engineers, we all know the drill. We spend our days building systems that need to be rock-solid, scale like crazy, and, most importantly, *not* be slow. That means we're constantly juggling a million things: tons of client requests, mountains of data, and integrations with all sorts of quirky third-party services. To truly master this game, you *need* to understand two key concepts: **concurrency** and **parallelism**. They're often thrown around together, but trust me, knowing the difference is what separates a good backend from a great one (or, let's be honest, from one that constantly wakes you up at 3 AM).
 
 ### The Dark Ages: Sequential Processing (Don't Do This!)
