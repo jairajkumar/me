@@ -26,7 +26,6 @@ To understand the JMM, we first need to see memory through the JVM's eyes. Logic
     *   Stack memory is managed efficiently, growing and shrinking as methods are invoked and return. Local variables exist only for the duration of their method's execution.
     *   Crucially, because each thread's stack is private, **stack memory is inherently thread-safe**.
     *   Deeply nested or infinitely recursive calls can lead to a `StackOverflowError`.
-
 2. **The Heap:**
     The heap is a **single, shared memory area** accessible by **all threads** within the JVM. This is where **all objects** are allocated.
     *   This includes instances of your custom classes, as well as objects like `String` or wrapper types (`Integer`, `Boolean`).
@@ -165,10 +164,8 @@ The gap between the JVM's model of a shared heap and the hardware's reality of p
 
 1.  **Visibility Problems:**
     If Thread A modifies a shared variable (on the heap), that change might initially only be written to Thread A's CPU cache. Thread B, running on a different CPU, might read the same variable from its own cache or main memory, seeing an outdated (stale) value. There's no inherent guarantee when a write by one thread becomes **visible** to others without explicit synchronization.
-
 2.  **Race Conditions:**
     A race condition occurs when the correctness of a computation depends on the unpredictable timing or interleaving of operations by multiple threads accessing shared data. The classic example is the "increment counter" operation.
-
     Consider this scenario:
     ```java
     class UnsafeCounter {
@@ -228,12 +225,9 @@ Key JMM constructs include:
     Declaring a shared member variable `volatile` (e.g., `private volatile boolean flag;`) primarily addresses **visibility**.
     *   **Write to `volatile`:** When a thread writes to a `volatile` variable, the JMM guarantees that this write is flushed to main memory immediately. Furthermore, all other variable writes that happened *before* the volatile write in that same thread are also flushed. This write *happens-before* any subsequent read of that *same* volatile variable by another thread.
     *   **Read from `volatile`:** When a thread reads a `volatile` variable, it's guaranteed to see the latest value written by any thread (i.e., it reads from main memory or a cache that's consistent with main memory). Also, the thread invalidates its local cache for other variables, so it will re-read them from main memory when next accessed. This read *happens-after* prior writes to that *same* volatile variable.
-
     `volatile` is excellent for simple flags or status indicators where one thread signals another, and the new value of the variable doesn't depend on its previous value (e.g., `stopRequested = true;`). However, `volatile` **does not guarantee atomicity for compound actions** like `count++`. While each read and write of the volatile `count` would be visible, the read-modify-write sequence itself can still be interleaved, leading to a race condition.
-
     *Use-Case Example:*
     Imagine one thread preparing data and then setting a `volatile boolean dataReady = true;`. Other threads polling `dataReady` are guaranteed that once they see `dataReady` as `true`, all data prepared *before* `dataReady` was set to `true` by the producer thread will also be visible.
-
 2.  **The `synchronized` Keyword:**
     `synchronized` blocks or methods provide a more robust solution, ensuring both **mutual exclusion** (atomicity for a block of code) and **visibility**.
     *   When a thread **enters** a `synchronized` block (or method), it acquires an intrinsic lock (monitor) associated with an object.
@@ -241,7 +235,6 @@ Key JMM constructs include:
     *   While a thread holds the lock, no other thread can enter a `synchronized` block (or method) protected by the *same* lock.
     *   When a thread **exits** a `synchronized` block, it releases the lock.
         *   **Happens-Before on Exit:** The JMM guarantees that the release of the lock *happens-before* any subsequent acquisition of that *same* lock by any other thread. Practically, this means all changes to shared variables made *within or before* the `synchronized` block by this thread are flushed to main memory before the lock is released.
-
     Let's fix our counter with `synchronized`:
     ```java
     class SafeCounter {
