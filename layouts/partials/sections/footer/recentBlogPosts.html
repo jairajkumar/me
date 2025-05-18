@@ -34,5 +34,8 @@
         </div>
         {{ end }}
     </div>
+    <div class="text-center pt-4">
+        <a href="{{ $recentPostsPath | relLangURL }}" class="btn btn-outline-primary rounded-pill">{{ .Site.Params.footer.recentPosts.viewAllText | default "View All Blogs" }}</a>
+    </div>
 </div>
 {{ end }}

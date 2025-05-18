@@ -273,6 +273,7 @@ params:
       count: 3
       title: Recent Posts
       enable: true # Disabled as no blog content assumed yet
+      viewAllText: "View All Blogs" # Or "All Blogs", "More Posts", etc.
       disableFeaturedImage: false
 
     socialNetworks: # Add your social links
