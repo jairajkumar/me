@@ -103,7 +103,6 @@ For finer control over concurrency, Spring Data JPA offers:
   @Lock(LockModeType.PESSIMISTIC_WRITE)
   Product findById(Long id);
   ```
-
 - **Optimistic Locking:** Uses version fields to detect concurrent modifications
   ```java
   @Entity
