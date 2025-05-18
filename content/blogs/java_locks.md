@@ -4,7 +4,7 @@ slug: 'java-locks'
 date: '2025-05-08T15:22:58+05:30'
 draft: false
 author: 'Jairaj Kumar'
-categories: ["java", "backend", "concurrency", "intenals", "multithreading"]
+categories: ["java", "backend", "intenals"]
 tags: ["java", "concurrency", "jvm", "locks", "jmm", "multithreading"]
 ---
 Java's multithreading capabilities are a cornerstone of modern application development, allowing us to build responsive and efficient systems that can handle multiple tasks concurrently. But with great power comes great responsibility. When multiple threads interact with shared data, the risk of data corruption and unpredictable behavior looms large. Ensuring thread safety is paramount, and **locks** are a fundamental tool in our Java concurrency toolkit.
