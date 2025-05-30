@@ -64,6 +64,51 @@ Menus:
     # Add other menu items as needed
 
 params:
+  authors:
+    - name: "Jairaj Kumar"
+      bio: "I'm a backend engineer who loves turning complexity into simplicity — designing real-time, scalable systems that quietly power millions behind the scenes."
+      image: "/images/jairajround.png"
+      link: "/"
+      social:
+        - name: "Twitter"
+          icon: "fab fa-x-twitter"
+          url: "https://x.com/Jairajsingh3105"
+        - name: "LinkedIn"
+          icon: "fab fa-linkedin"
+          url: "https://linkedin.com/in/jairaj-kumar/"
+        # - name: "GitHub"
+        #   icon: "fab fa-github"
+        #   url: "https://github.com/jairajkumar3105"
+    - name: "Author 2"
+      bio: "Bio for Author 2"
+      image: "/images/authors/author2.jpg"
+      link: "https://external-site.com"
+      social:
+        - name: "Twitter"
+          icon: "fab fa-twitter"
+          url: "https://twitter.com/author2"
+        - name: "LinkedIn"
+          icon: "fab fa-linkedin"
+          url: "https://linkedin.com/in/author2"
+        - name: "GitHub"
+          icon: "fab fa-github"
+          url: "https://github.com/author2" 
+    # name: "Your Name"
+    # bio: "Your bio goes here. Write a brief description about yourself, your expertise, and what you write about."
+    # image: "/images/jairajround.png"  # Path to your author image
+    # social:
+    #   - name: "Twitter"
+    #     icon: "fab fa-x-twitter"
+    #     url: "https://twitter.com/yourusername"
+    #   - name: "LinkedIn"
+    #     icon: "fab fa-linkedin"
+    #     url: "https://linkedin.com/in/yourusername"
+    #   - name: "GitHub"
+    #     icon: "fab fa-github"
+    #     url: "https://github.com/yourusername" 
+
+
+
   title: "Jairaj Kumar" # Your Name
   description: "Software Engineer specializing in distributed systems, media streaming, and DevOps." # Updated description based on profile
   # staticPath: ""

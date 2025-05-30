@@ -40,6 +40,38 @@
           <article class="page-content  p-2">
           {{ .Content | emojify }}
           </article>
+
+          <!-- Author Details Section -->
+          {{ if and .Params.author .Site.Params.authors }}
+            {{ $authorName := .Params.author }}
+            {{ $author := index (where .Site.Params.authors "name" $authorName) 0 }}
+            {{ if $author }}
+            <div class="author-details mt-5 p-4 rounded">
+              <div class="row align-items-center">
+                <div class="col-md-3">
+                  {{ if $author.image }}
+                  <a href="{{ $author.link }}" {{ if strings.HasPrefix $author.link "http" }}target="_blank" rel="noopener noreferrer"{{ end }} class="author-link">
+                    <img src="{{ $author.image }}" alt="{{ $author.name }}" class="img-fluid" style="max-width: 150px;">
+                  </a>
+                  {{ end }}
+                </div>
+                <div class="col-md-9">
+                  <a href="{{ $author.link }}" {{ if strings.HasPrefix $author.link "http" }}target="_blank" rel="noopener noreferrer"{{ end }} class="author-link">
+                    <h3 class="mb-3">{{ $author.name }}</h3>
+                    <p class="mb-3">{{ $author.bio }}</p>
+                  </a>
+                  <div class="social-links">
+                    {{ range $author.social }}
+                    <a href="{{ .url }}" target="_blank" class="me-3" title="{{ .name }}">
+                      <i class="{{ .icon }}"></i>
+                    </a>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          {{ end }}
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
