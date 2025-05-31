@@ -5,7 +5,7 @@ on:
   # Runs on pushes targeting the relative_path branch
   push:
     branches:
-      - relative_path
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
