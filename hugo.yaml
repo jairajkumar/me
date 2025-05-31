@@ -1,5 +1,5 @@
 # baseURL: https://jairajkumar.github.io/me/ # Replace with your actual domain
-baseURL: hhttps://jairajkumar.com/
+baseURL: https://jairajkumar.com/
 languageCode: en-us
 title: "Jairaj Kumar | Software Engineer" # Updated Title
 theme: hugo-profile
@@ -64,6 +64,12 @@ Menus:
     # Add other menu items as needed
 
 params:
+  featuredBlogs:
+    title: "Featured Posts"
+    count: 3  # Number of featured posts to show
+    enable: true
+    viewAllText: "View Featured Blogs"
+
   authors:
     - name: "Jairaj Kumar"
       bio: "I'm a backend engineer who loves turning complexity into simplicity — designing real-time, scalable systems that quietly power millions behind the scenes."

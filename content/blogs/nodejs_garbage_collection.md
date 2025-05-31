@@ -5,7 +5,8 @@ date: '2025-05-11T02:43:01+05:30'
 draft: False
 author: 'Jairaj Kumar'
 description: ''
-categories: ["nodejs", "backend", "intenals"]
+categories: ["nodejs", "backend", "intenals", "featured"]
+featured: 1
 tags: ["nodejs", "concurrency", "garbage collection", "memory management", "v8"]
 toc: True
 ---

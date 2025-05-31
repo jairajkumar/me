@@ -1,0 +1,46 @@
+{{ $featuredPosts := where .Site.RegularPages "Section" "blogs" }}
+{{ $featuredPosts = where $featuredPosts "Params.featured" ">" 0 }}
+{{ $featuredPosts = sort $featuredPosts "Params.featured" "asc" }}
+{{ $featuredCount := .Site.Params.featuredBlogs.count | default 3 }}
+{{ if gt (len $featuredPosts) 0 }}
+<!-- <link rel="stylesheet" href="{{ "css/list.css" | relURL }}" media="all"> -->
+<link rel="stylesheet" href="{{ "css/featured-blogs.css" | relURL }}" media="all">
+
+<div class="container py-5" id="list-page">
+    <div class="h3 text-center text-secondary py-3">
+        {{ .Site.Params.featuredBlogs.title | default "Featured Posts" }}
+    </div>
+    <div class="row">
+        {{ range first $featuredCount $featuredPosts }}
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.image) }}
+                <div class="card-header">
+                    <a href="{{ .RelPermalink }}">
+                        <img src="{{ .Params.image | relURL }}" class="card-img-top" alt="{{ .Title }}">
+                    </a>
+                </div>
+                {{ end }}
+                <div class="card-body bg-transparent p-4 shadow-sm">
+                    <a href="{{ .RelPermalink }}" class="primary-font card-title text-reset stretched-link">
+                        <h1 class="card-title bg-transparent" title="{{ .Title }}">{{ .Title }}</h1>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p class="card-summary">{{ .Summary | truncate 300}}</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">{{ .Date.Format (.Site.Params.datesFormat.articleRecent | default "January 2, 2006") }}</span>
+                    <a href="{{ .RelPermalink }}" class="float-end btn btn-outline-info btn-sm">{{ .Site.Params.terms.read | default "Read" }}</a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    {{ if ge (len $featuredPosts) $featuredCount }}
+    <div class="text-center pt-4">
+        <a href="{{ "categories/featured/" | relURL }}" class="btn btn-outline-primary rounded-pill view-all-btn ">{{ .Site.Params.featuredBlogs.viewAllText | default "View All Featured Posts" }}</a>
+    </div>
+    {{ end }}
+</div>
+{{ end }} 
