@@ -1,5 +1,5 @@
 # baseURL: https://jairajkumar.github.io/me/ # Replace with your actual domain
-baseURL: https://jairajkumar.github.io/me/
+baseURL: https://jairajkumar.github.io/
 languageCode: en-us
 title: "Jairaj Kumar | Software Engineer" # Updated Title
 theme: hugo-profile
@@ -68,7 +68,7 @@ params:
     - name: "Jairaj Kumar"
       bio: "I'm a backend engineer who loves turning complexity into simplicity — designing real-time, scalable systems that quietly power millions behind the scenes."
       image: "images/jairajround.png"
-      link: "/"
+      link: "{{ .Site.BaseURL }}"
       social:
         - name: "Twitter"
           icon: "fab fa-x-twitter"
