@@ -1,6 +1,6 @@
 {{ $featuredPosts := where .Site.RegularPages "Section" "blogs" }}
 {{ $featuredPosts = where $featuredPosts "Params.featured" ">" 0 }}
-{{ $featuredPosts = sort $featuredPosts "Params.featured" "asc" }}
+{{ $featuredPosts = sort $featuredPosts "Params.featured" "desc" }}
 {{ $featuredCount := .Site.Params.featuredBlogs.count | default 3 }}
 {{ if gt (len $featuredPosts) 0 }}
 <!-- <link rel="stylesheet" href="{{ "css/list.css" | relURL }}" media="all"> -->

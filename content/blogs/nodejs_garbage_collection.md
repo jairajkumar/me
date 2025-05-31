@@ -6,7 +6,7 @@ draft: False
 author: 'Jairaj Kumar'
 description: ''
 categories: ["nodejs", "backend", "intenals", "featured"]
-featured: 1
+featured: 4
 tags: ["nodejs", "concurrency", "garbage collection", "memory management", "v8"]
 toc: True
 ---

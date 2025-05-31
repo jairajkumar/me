@@ -5,7 +5,7 @@ author: "Jairaj Kumar" # Add your name here
 draft: false # Make sure draft is false if you want it published
 toc: true
 categories: ["artificial-intelligence", "generative-ai", "vector-databases", "tutorials", "featured"]
-featured: 1.1
+featured: 3
 tags: ["AI", "rag", "vector-databases", "gemini", "llm"]
 
 ---

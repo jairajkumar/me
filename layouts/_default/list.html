@@ -11,7 +11,19 @@
 <div class="container pt-5" id="list-page">
     <h2 class="text-center pb-2">{{.Title}}</h2>
     <div class="row">
-        {{ range .Paginator.Pages }}
+        {{ $pages := .Pages }}
+        {{/* Check if this is a taxonomy term page for featured category */}}
+        {{ if and (eq .Kind "term") (eq .Section "categories") (eq .Title "Featured") }}
+            {{/* Get all pages in this category and sort by featured value */}}
+            {{ $pages = where .Pages "Params.featured" ">" 0 }}
+            {{ $pages = sort $pages "Params.featured" "desc" "float" }}
+        {{ else }}
+            {{/* For any other list page, use the default collection (.Pages) */}}
+            {{ $pages = .Pages }}
+        {{ end }}
+
+        {{ $paginator := .Paginate $pages }}
+        {{ range $paginator.Pages }}
         <div class="col-lg-4 col-md-6 my-3">
             <div class="card h-100">
                 {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.image) }}
