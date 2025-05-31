@@ -3,7 +3,7 @@ title: 'QUIC: The Next Generation Internet Transport Protocol'
 date: '2025-06-01T00:01:42+05:30'
 draft: false
 author: 'Jairaj Kumar'
-slug: QUIC_introduction
+slug: QUIC-introduction
 description: ''
 categories: ["backend", "intenals"]
 tags: ["networking", "HTTP", "QUIC", "TCP", "UDP"]
