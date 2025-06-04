@@ -120,7 +120,7 @@ params:
   # staticPath: ""
   favicon: "fav.png" # Replace with your favicon path
 
-  useBootstrapCDN: false
+  useBootstrapCDN: true
   # cloudinary_cloud_name: "YOUR_CLOUD_NAME" # If using Cloudinary
   mathjax: false
   animate: true
@@ -180,8 +180,8 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Jairaj Kumar." # Your Name
-    subtitle: "Software Engineer | Distributed Systems | Media Streaming | DevOps" # Updated subtitle based on profile/skills
-    content: "Adept at designing, developing, troubleshooting, and debugging software applications and systems. Passionate about optimizing scalable architectures and solving complex engineering challenges." # Shortened profile
+    subtitle: "Software Engineer | Backend Devloper" # Updated subtitle based on profile/skills
+    content: "Adept at designing, developing, troubleshooting, and debugging software applications and systems. Passionate about optimizing scalable architectures and solving complex engineering challenges. Proficient in distributed systems, media streaming, and DevOps." # Shortened profile
     image: images/me.jpg # Replace with your hero image path
     bottomImage:
       enable: true
@@ -216,18 +216,22 @@ params:
       title: "Technologies I work with:"
       items: # Populated from skills section
         - "Python"
+        - "C++"
+        - "Java"
         - "Javascript / TypeScript"
         - "Node.js / Express"
-        - "C++"
+        - "langchain / AI agents."
+        - "Django"
         - "Bash"
         - "REST APIs"
         - "WebSocket"
+        - "RabbitMQ"
         - "MongoDB / MySQL"
         - "Redis"
-        - "Docker / Kubernetes"
-        - "GCP / Azure "
         - "Linux"
+        - "Docker / Kubernetes"
         - "CI/CD (Azure Pipelines)"
+        - "GCP / Azure "
         - "Data Structures & Algorithms"
         - "React.js" # Added from Cognizant Internship
 
