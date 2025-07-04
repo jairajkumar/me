@@ -89,6 +89,246 @@
 <script src="{{ .Site.Params.staticPath }}/js/contact.js"></script>
 {{ end }}
 
+<!-- Mermaid diagrams support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+    let mermaidInitialized = false;
+    let isThemeChanging = false;
+    let originalMermaidContent = new Map();
+    
+    function getMermaidThemeConfig() {
+        const isDark = document.body.classList.contains('dark');
+        
+        if (isDark) {
+            return {
+                theme: 'dark',
+                themeVariables: {
+                    primaryColor: '#6366f1',
+                    primaryTextColor: '#f9fafb',
+                    primaryBorderColor: '#4b5563',
+                    lineColor: '#9ca3af',
+                    secondaryColor: '#374151',
+                    tertiaryColor: '#1f2937',
+                    background: '#111827',
+                    mainBkg: '#1f2937',
+                    secondBkg: '#374151',
+                    tertiaryBkg: '#111827',
+                    
+                    // Additional dark theme improvements
+                    textColor: '#f9fafb',
+                    darkTextColor: '#f9fafb',
+                    nodeBkg: '#374151',
+                    nodeBorder: '#6b7280',
+                    clusterBkg: '#1f2937',
+                    clusterBorder: '#4b5563',
+                    defaultLinkColor: '#9ca3af',
+                    titleColor: '#f9fafb',
+                    edgeLabelBackground: '#374151',
+                    
+                    // Sequence diagram colors
+                    actorBkg: '#374151',
+                    actorBorder: '#6b7280',
+                    actorTextColor: '#f9fafb',
+                    actorLineColor: '#6b7280',
+                    signalColor: '#f9fafb',
+                    signalTextColor: '#f9fafb',
+                    labelBoxBkgColor: '#374151',
+                    labelBoxBorderColor: '#6b7280',
+                    labelTextColor: '#f9fafb',
+                    activationBkgColor: '#4b5563',
+                    activationBorderColor: '#6b7280',
+                    
+                    // Flowchart colors
+                    primaryBorderColor: '#6b7280',
+                    primaryTextColor: '#f9fafb',
+                    secondaryColor: '#4b5563',
+                    tertiaryColor: '#1f2937'
+                }
+            };
+        } else {
+            return {
+                theme: 'base',
+                themeVariables: {
+                    primaryColor: '#4f46e5',
+                    primaryTextColor: '#1f2937',
+                    primaryBorderColor: '#d1d5db',
+                    lineColor: '#6b7280',
+                    secondaryColor: '#f9fafb',
+                    tertiaryColor: '#ffffff',
+                    background: '#ffffff',
+                    mainBkg: '#ffffff',
+                    secondBkg: '#f3f4f6',
+                    tertiaryBkg: '#f9fafb'
+                }
+            };
+        }
+    }
+    
+    function initializeMermaid() {
+        if (mermaidInitialized) return;
+        
+        try {
+            // Store original content BEFORE any rendering happens
+            document.querySelectorAll('.mermaid').forEach((diagram, index) => {
+                const content = diagram.textContent.trim();
+                if (content && !originalMermaidContent.has(index)) {
+                    originalMermaidContent.set(index, content);
+                    // Also store as data attribute for backup
+                    diagram.setAttribute('data-original-mermaid', content);
+                }
+            });
+            
+            const config = getMermaidThemeConfig();
+            
+            mermaid.initialize({
+                startOnLoad: true,
+                securityLevel: 'loose',
+                ...config
+            });
+            mermaidInitialized = true;
+            
+        } catch (error) {
+            console.error('Mermaid initialization error:', error);
+        }
+    }
+    
+    function reRenderMermaidDiagrams() {
+        if (isThemeChanging) return; // Prevent multiple simultaneous renders
+        isThemeChanging = true;
+        
+        try {
+            const diagrams = document.querySelectorAll('.mermaid');
+            if (diagrams.length === 0) {
+                isThemeChanging = false;
+                return;
+            }
+            
+            // Re-initialize Mermaid with new theme
+            const config = getMermaidThemeConfig();
+            mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                ...config
+            });
+            
+            // Re-render all diagrams
+            let renderPromises = [];
+            diagrams.forEach((diagram, index) => {
+                // Get original content from multiple sources for reliability
+                let originalContent = originalMermaidContent.get(index);
+                if (!originalContent) {
+                    originalContent = diagram.getAttribute('data-original-mermaid');
+                }
+                
+                if (originalContent) {
+                    // Clear the diagram and show loading state
+                    diagram.removeAttribute('data-processed');
+                    diagram.style.opacity = '0.5';
+                    diagram.innerHTML = '<div style="padding: 20px; text-align: center; color: #666;">🔄 Updating theme...</div>';
+                    
+                    const renderPromise = mermaid.render(`mermaid-${Date.now()}-${index}`, originalContent)
+                        .then(({svg}) => {
+                            diagram.innerHTML = svg;
+                            diagram.style.opacity = '1';
+                        })
+                        .catch((error) => {
+                            console.error('Mermaid render error for diagram', index, ':', error);
+                            console.error('Failed content was:', originalContent.substring(0, 200) + '...');
+                            // Fallback to original content as text
+                            diagram.innerHTML = `<pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; font-size: 12px; overflow-x: auto;">${originalContent}</pre>`;
+                            diagram.style.opacity = '1';
+                        });
+                    renderPromises.push(renderPromise);
+                } else {
+                    console.error('No original content found for diagram', index);
+                    diagram.style.opacity = '1';
+                }
+            });
+            
+            // Wait for all renders to complete
+            Promise.allSettled(renderPromises).finally(() => {
+                isThemeChanging = false;
+            });
+            
+        } catch (error) {
+            console.error('Mermaid re-render error:', error);
+            isThemeChanging = false;
+            // Reset opacity for all diagrams
+            document.querySelectorAll('.mermaid').forEach((diagram) => {
+                diagram.style.opacity = '1';
+            });
+        }
+    }
+    
+    // Store original content immediately when script loads
+    function storeOriginalContent() {
+        document.querySelectorAll('.mermaid').forEach((diagram, index) => {
+            const content = diagram.textContent.trim();
+            if (content && !originalMermaidContent.has(index)) {
+                originalMermaidContent.set(index, content);
+                diagram.setAttribute('data-original-mermaid', content);
+            }
+        });
+    }
+    
+    // Store content as soon as possible
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', storeOriginalContent);
+    } else {
+        storeOriginalContent();
+    }
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        // Small delay to ensure everything is loaded
+        setTimeout(() => {
+            initializeMermaid();
+        }, 100);
+    });
+    
+    // Handle theme toggle with debouncing
+    document.addEventListener('DOMContentLoaded', function() {
+        let mermaidThemeTimeout; // Renamed to avoid conflict with search.js
+        const themeToggle = document.getElementById("theme-toggle");
+        
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                // Clear any existing timeout
+                if (mermaidThemeTimeout) {
+                    clearTimeout(mermaidThemeTimeout);
+                }
+                
+                // Debounce the theme change
+                mermaidThemeTimeout = setTimeout(() => {
+                    if (mermaidInitialized && !isThemeChanging) {
+                        reRenderMermaidDiagrams();
+                    }
+                }, 150);
+            });
+        }
+    });
+    
+    // Handle page visibility changes (helps with tab switching issues)
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden && mermaidInitialized) {
+            // Small delay to re-render if needed when page becomes visible
+            setTimeout(() => {
+                const diagrams = document.querySelectorAll('.mermaid');
+                diagrams.forEach((diagram) => {
+                    if (!diagram.querySelector('svg') && originalMermaidContent.has(Array.from(diagrams).indexOf(diagram))) {
+                        reRenderMermaidDiagrams();
+                    }
+                });
+            }, 300);
+        }
+    });
+</script>
+
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
+{{ end }}
+
+<!-- Mermaid Test Script (Development Only) -->
+{{ if hugo.IsServer }}
+<script src="{{ .Site.Params.staticPath }}/js/mermaid-test.js"></script>
 {{ end }}

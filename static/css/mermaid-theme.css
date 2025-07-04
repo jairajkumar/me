@@ -1,0 +1,252 @@
+/* Mermaid Theme Integration with Hugo */
+
+.mermaid {
+    margin: 2rem 0;
+    text-align: center;
+    position: relative;
+    transition: opacity 0.2s ease;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Light theme styling */
+.mermaid svg {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+/* Dark theme adjustments */
+.dark .mermaid svg {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(17, 24, 39, 0.95) !important;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Force dark theme text colors */
+.dark .mermaid svg text,
+.dark .mermaid svg tspan {
+    fill: #f9fafb !important;
+}
+
+/* Dark theme node styling */
+.dark .mermaid svg .node rect,
+.dark .mermaid svg .node circle,
+.dark .mermaid svg .node ellipse,
+.dark .mermaid svg .node polygon {
+    fill: #374151 !important;
+    stroke: #6b7280 !important;
+}
+
+/* Dark theme edge styling */
+.dark .mermaid svg .edgePath .path,
+.dark .mermaid svg .flowchart-link {
+    stroke: #9ca3af !important;
+}
+
+/* Dark theme cluster/subgraph styling */
+.dark .mermaid svg .cluster rect {
+    fill: rgba(31, 41, 55, 0.8) !important;
+    stroke: #4b5563 !important;
+}
+
+/* Dark theme sequence diagram styling */
+.dark .mermaid svg .actor {
+    fill: #374151 !important;
+    stroke: #6b7280 !important;
+}
+
+.dark .mermaid svg .actor-line {
+    stroke: #6b7280 !important;
+}
+
+/* Dark theme labels and messages */
+.dark .mermaid svg .messageText,
+.dark .mermaid svg .labelText,
+.dark .mermaid svg .loopText {
+    fill: #f9fafb !important;
+}
+
+/* Dark theme activation boxes */
+.dark .mermaid svg .activation0,
+.dark .mermaid svg .activation1,
+.dark .mermaid svg .activation2 {
+    fill: #4b5563 !important;
+    stroke: #6b7280 !important;
+}
+
+/* Custom class definitions for dark theme */
+.dark .mermaid svg .fastNode rect,
+.dark .mermaid svg .fastNode circle,
+.dark .mermaid svg .setBit rect,
+.dark .mermaid svg .setBitApple rect,
+.dark .mermaid svg .addNode rect {
+    fill: #10b981 !important;
+    stroke: #059669 !important;
+}
+
+.dark .mermaid svg .mediumNode rect,
+.dark .mermaid svg .mediumNode circle,
+.dark .mermaid svg .hashNode rect,
+.dark .mermaid svg .setBitBanana rect,
+.dark .mermaid svg .maybeNode rect {
+    fill: #f59e0b !important;
+    stroke: #d97706 !important;
+}
+
+.dark .mermaid svg .slowNode rect,
+.dark .mermaid svg .slowNode circle,
+.dark .mermaid svg .queryNode rect,
+.dark .mermaid svg .definiteNode rect {
+    fill: #ef4444 !important;
+    stroke: #dc2626 !important;
+}
+
+.dark .mermaid svg .clientNode rect,
+.dark .mermaid svg .inputNode rect,
+.dark .mermaid svg .primary rect {
+    fill: #6366f1 !important;
+    stroke: #4f46e5 !important;
+}
+
+.dark .mermaid svg .appNode rect,
+.dark .mermaid svg .setBitBoth rect {
+    fill: #8b5cf6 !important;
+    stroke: #7c3aed !important;
+}
+
+.dark .mermaid svg .collisionBit rect {
+    fill: #eab308 !important;
+    stroke: #ca8a04 !important;
+}
+
+.dark .mermaid svg .emptyBit rect {
+    fill: #4b5563 !important;
+    stroke: #6b7280 !important;
+}
+
+/* Ensure text in custom nodes is white for dark theme */
+.dark .mermaid svg .fastNode text,
+.dark .mermaid svg .mediumNode text,
+.dark .mermaid svg .slowNode text,
+.dark .mermaid svg .clientNode text,
+.dark .mermaid svg .appNode text,
+.dark .mermaid svg .setBit text,
+.dark .mermaid svg .setBitApple text,
+.dark .mermaid svg .setBitBanana text,
+.dark .mermaid svg .setBitBoth text,
+.dark .mermaid svg .hashNode text,
+.dark .mermaid svg .inputNode text,
+.dark .mermaid svg .queryNode text,
+.dark .mermaid svg .addNode text,
+.dark .mermaid svg .maybeNode text,
+.dark .mermaid svg .definiteNode text,
+.dark .mermaid svg .collisionBit text,
+.dark .mermaid svg .primary text {
+    fill: #ffffff !important;
+}
+
+/* Special handling for empty bit text - needs to be dark for visibility */
+.dark .mermaid svg .emptyBit text,
+.dark .mermaid svg .emptyBit tspan {
+    fill: #1f2937 !important;
+    font-weight: bold !important;
+}
+
+/* Smooth transitions for theme changes */
+.mermaid * {
+    transition: fill 0.2s ease, stroke 0.2s ease, color 0.2s ease;
+}
+
+/* Loading state during theme transitions */
+.mermaid[style*="opacity: 0.5"] {
+    pointer-events: none;
+    position: relative;
+}
+
+.mermaid[style*="opacity: 0.5"]::after {
+    content: "Updating theme...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.dark .mermaid[style*="opacity: 0.5"]::after {
+    background: rgba(17, 24, 39, 0.95);
+    color: #f9fafb;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Dark theme improvements for better contrast */
+.dark .mermaid {
+    background: rgba(17, 24, 39, 0.2);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* Prevent text selection during transitions */
+.mermaid[style*="opacity: 0.5"] svg {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .mermaid {
+        margin: 1rem 0;
+    }
+    
+    .mermaid svg {
+        max-width: 100%;
+        font-size: 12px;
+    }
+    
+    .mermaid[style*="opacity: 0.5"]::after {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .mermaid svg {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+        background-color: white !important;
+    }
+    
+    .mermaid[style*="opacity: 0.5"]::after {
+        display: none;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .mermaid,
+    .mermaid svg,
+    .mermaid * {
+        transition: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .mermaid svg {
+        filter: contrast(1.2);
+    }
+} 
