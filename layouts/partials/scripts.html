@@ -327,6 +327,7 @@
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}
+<script src="{{ .Site.Params.staticPath }}/js/mermaid-test.js"></script>
 
 <!-- Mermaid Test Script (Development Only) -->
 {{ if hugo.IsServer }}
