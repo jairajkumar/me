@@ -158,6 +158,13 @@
     font-weight: bold !important;
 }
 
+/* Also handle nodes with emptyBit class */
+.dark .mermaid svg .node.emptyBit text,
+.dark .mermaid svg .node.emptyBit tspan {
+    fill: #1f2937 !important;
+    font-weight: bold !important;
+}
+
 /* Smooth transitions for theme changes */
 .mermaid * {
     transition: fill 0.2s ease, stroke 0.2s ease, color 0.2s ease;
