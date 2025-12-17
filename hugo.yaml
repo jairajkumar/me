@@ -72,7 +72,7 @@ params:
 
   authors:
     - name: "Jairaj Kumar"
-      bio: "I'm a backend engineer who loves turning complexity into simplicity — designing real-time, scalable systems that quietly power millions behind the scenes."
+      bio: "I'm a Software engineer who loves turning complexity into simplicity — designing real-time, scalable systems that quietly power millions behind the scenes."
       image: "images/jairajround.png"
       link: "/"
       social:
@@ -91,7 +91,7 @@ params:
       link: "https://external-site.com"
       social:
         - name: "Twitter"
-          icon: "fab fa-twitter"
+          icon: "fab fa-x-twitter"
           url: "https://twitter.com/author2"
         - name: "LinkedIn"
           icon: "fab fa-linkedin"
@@ -189,7 +189,7 @@ params:
     button: # Optional Resume Button
       enable: true
       name: "Resume"
-      url: "/JairajKumarResume_Main2.pdf" # Link to your resume PDF if you place it in static folder
+      url: "/jairajresume.pdf" # Link to your resume PDF if you place it in static folder
       download: true
       newPage: false
     socialLinks:
