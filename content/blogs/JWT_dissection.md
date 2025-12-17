@@ -36,7 +36,7 @@ A JWT is a standardized token format defined in **RFC 7519**. It allows two part
 
 A JWT consists of **three Base64URL-encoded parts** separated by dots:
 
-```
+```json
 header.payload.signature
 ```
 
