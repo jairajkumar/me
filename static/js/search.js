@@ -94,7 +94,7 @@ async function performSearch(evt) {
           description.textContent = item.description || "No description available"; // Safe
 
           contentDiv.appendChild(title);
-          contentDiv.appendChild(description);
+          // contentDiv.appendChild(description);
           link.appendChild(contentDiv);
           card.appendChild(link);
           searchResultsContainer.appendChild(card);
