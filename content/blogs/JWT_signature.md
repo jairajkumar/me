@@ -9,6 +9,7 @@ description: ''
 featured: 0  # 0 means not featured, higher numbers (e.g., 1.1, 1.2) will be shown in order
 toc: true
 slug: 'JWT-signature'
+mathjax: true
 ---
 If we look at our previous discussion in **JWT Dissection**, we established that a JWT is effectively a digital ID card. But in a distributed system, an ID card is worthless if anyone can forge it.
 
@@ -27,7 +28,7 @@ When we transmit data between services, we are sending plain text (Base64). With
 
 The signature is generated using a specific formula:
 
-$$Signature = \text{Sign}(\text{Base64(Header)} + "." + \text{Base64(Payload)}, \ \text{Key})$$
+$$Signature = Sign(Base64(Header) + "." + Base64(Payload), Key)$$
 
 This creates a **Cryptographic Binding**. If a hacker changes the payload from `{"user_id": 101}` to `{"user_id": 102}`, the hash of the payload changes. Since the signature is derived from that hash, the token becomes invalid immediately.
 
