@@ -11,7 +11,7 @@ toc: true
 slug: 'JWT-signature'
 mathjax: true
 ---
-If we look at our previous discussion in **JWT Dissection**, we established that a JWT is effectively a digital ID card. But in a distributed system, an ID card is worthless if anyone can forge it.
+If we look at our previous discussion in [**JWT Dissection**]({{< ref "JWT_dissection.md" >}}), we established that a JWT is effectively a digital ID card. But in a distributed system, an ID card is worthless if anyone can forge it.
 
 In the physical world, we rely on a **Gazetted Officer's Attestation**. When we get a document stamped, that official seal guarantees two things:
 
@@ -129,14 +129,6 @@ We cannot risk a "Padding Oracle Attack" when moving money. Therefore, for finan
 
 {{< mermaid >}}
 flowchart TD
-    subgraph RS256 ["RS256 (Deterministic)"]
-    direction TB
-    Input1["Payload Data"] --> Hash1["SHA-256"]
-    Hash1 --> Pad1["Static Padding"]
-    Pad1 --> Enc1["RSA Encrypt"]
-    Enc1 --> Sig1["Signature A"]
-    end
-    
     subgraph PS256 ["PS256 (Probabilistic)"]
     direction TB
     Input2["Payload Data"] --> Hash2["SHA-256"]
@@ -144,6 +136,14 @@ flowchart TD
     Hash2 --> Mix["MGF1 Mixing"]
     Mix --> Enc2["RSA Encrypt"]
     Enc2 --> Sig2["Signature B (Unique every time)"]
+    end
+    
+    subgraph RS256 ["RS256 (Deterministic)"]
+    direction TB
+    Input1["Payload Data"] --> Hash1["SHA-256"]
+    Hash1 --> Pad1["Static Padding"]
+    Pad1 --> Enc1["RSA Encrypt"]
+    Enc1 --> Sig1["Signature A"]
     end
     
     style Salt fill:#f9f,stroke:#333
@@ -163,4 +163,4 @@ When we architect our systems, we should use the following decision matrix to ch
 
 ### Conclusion
 
-We often treat JWT libraries as "plug and play," but the choice of `alg` in the header has massive security implications. For most general purposes, RS256 is acceptable. But as we build systems handling sensitive Indian financial data or personal identity, moving to PS256 is not just an upgrade—it's a responsibility.
+We often treat JWT libraries as "plug and play," but the choice of `alg` in the header has massive security implications. For most general purposes, RS256 is acceptable. But as we build systems handling sensitive financial data or personal identity, moving to PS256 is not just an upgrade—it's a responsibility.

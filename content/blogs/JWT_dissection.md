@@ -83,7 +83,7 @@ flowchart LR
 {{< /mermaid >}}
 
  **Note**  
-JWT signatures and cryptographic signing deserve a deep dive of their own. We’ll cover signature algorithms, key management, and signing internals in a **separate dedicated blog on JWT signatures and signing**.
+JWT signatures and cryptographic signing deserve a deep dive of their own. We’ll cover signature algorithms, key management, and signing internals in a [**separate dedicated blog on JWT signatures and signing**]({{< ref "JWT_signature.md" >}}).
 
 
 ## 4. How signing and verification works
@@ -148,6 +148,6 @@ sequenceDiagram
 
 JWTs are powerful but easy to misuse. Understanding their **structure, verification flow, and limitations** is essential for building secure systems.
 
-In the next blog, we’ll dive deep into **JWT signatures and cryptography**.
+In the next blog, we’ll dive deep into [**JWT signatures and cryptography**]({{< ref "JWT_signature.md" >}}).
 
 ---
