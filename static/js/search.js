@@ -1,9 +1,9 @@
 function encodeHTML(str) {
   return str.replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function isValidUrl(url) {
@@ -43,8 +43,10 @@ async function performSearch(evt) {
       document.getElementById("search-content").style.width = "300px";
     }
 
-    document.getElementById("search-content").style.top =
-      searchButtonPosition.top + 50 + "px";
+    const searchContent = document.getElementById("search-content");
+    searchContent.style.position = "fixed";
+    searchContent.style.top =
+      searchButtonPosition.top + searchButtonPosition.height + 10 + "px";
     document.getElementById("search-content").style.left =
       searchButtonPosition.left + "px";
 
@@ -115,3 +117,13 @@ async function performSearch(evt) {
     document.getElementById("search-results").innerHTML = "";
   }
 }
+
+// Hide search results on scroll
+window.addEventListener("scroll", () => {
+  const searchContent = document.getElementById("search-content");
+  if (searchContent && searchContent.style.display === "block") {
+    searchContent.style.display = "none";
+    document.getElementById("search-results").innerHTML = "";
+    document.querySelectorAll("#search").forEach((input) => (input.value = ""));
+  }
+});
