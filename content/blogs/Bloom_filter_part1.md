@@ -4,8 +4,8 @@ date: '2025-06-15T14:42:00+05:30'
 draft: false
 author: 'Jairaj Kumar'
 slug: bloom-filter-part1
-categories: []
-tags: []
+categories: ["backend", "internals", "Design"]
+tags: ["bloom-filters", "mongodb", "redis", "database-optimization"]
 description: ''
 toc: true
 featured: 0  # 0 means not featured, higher numbers (e.g., 1.1, 1.2) will be shown in order

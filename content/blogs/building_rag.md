@@ -4,7 +4,7 @@ date: "2025-05-01T03:49:40+05:30"
 author: "Jairaj Kumar" # Add your name here
 draft: false # Make sure draft is false if you want it published
 toc: true
-categories: ["artificial-intelligence", "generative-ai", "vector-databases", "tutorials", "featured"]
+categories: ["AI", "featured"]
 featured: 3
 tags: ["AI", "rag", "vector-databases", "gemini", "llm"]
 

@@ -51,11 +51,11 @@ Menus:
       title: Categories
       url: /categories
       weight: 2
-    - identifier: tags
-      name: Tags
-      title: Tags
-      url: /tags
-      weight: 3
+    # - identifier: tags
+    #   name: Tags
+    #   title: Tags
+    #   url: /tags
+    #   weight: 3
     # - identifier: gallery # Uncomment if you plan to have a gallery
     #   name: Gallery
     #   title: Gallery Page

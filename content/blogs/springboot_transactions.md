@@ -4,7 +4,7 @@ date: '2025-05-18T19:30:48+05:30'
 draft: false
 author: 'Jairaj Kumar'
 slug: 'springboot-transactions'
-categories: ["java", "backend", "intenals"]
+categories: ["java", "backend", "internals"]
 tags: ["java", "concurrency", "database", "transactions", "spring boot"]
 description: ''
 ---

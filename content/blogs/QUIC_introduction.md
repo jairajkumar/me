@@ -5,7 +5,7 @@ draft: false
 author: 'Jairaj Kumar'
 slug: QUIC-introduction
 description: ''
-categories: ["backend", "intenals"]
+categories: ["backend", "internals"]
 tags: ["networking", "HTTP", "QUIC", "TCP", "UDP"]
 toc: true
 featured: 0  # 0 means not featured, higher numbers (e.g., 1.1, 1.2) will be shown in order

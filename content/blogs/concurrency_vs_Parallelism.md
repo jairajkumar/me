@@ -4,7 +4,7 @@ date: '2025-05-14T14:06:51+05:30'
 draft: false
 author: 'Jairaj Kumar'
 slug: 'concurrency-vs-parallelism'
-categories: ["nodejs", "backend", "intenals", "featured"]
+categories: ["nodejs", "backend", "internals", "featured"]
 featured: 1.4
 tags: ["concurrency", "parallelism", "backend", "nodejs", "performance", "scalability"]
 toc: True
