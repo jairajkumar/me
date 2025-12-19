@@ -166,7 +166,7 @@ params:
     # searchPlaceholder: "Search"
     stickyNavBar:
       enable : true
-      showOnScrollUp : true
+      showOnScrollUp : false
     enableSeparator: true
     menus: # Keep sections enabled based on your content
       disableAbout: true
@@ -232,6 +232,7 @@ params:
         - "Docker / Kubernetes"
         - "CI/CD (Azure Pipelines)"
         - "GCP / Azure "
+        - "Terraform"
         - "Data Structures & Algorithms"
         - "React.js" # Added from Cognizant Internship
 

@@ -164,3 +164,5 @@ When we architect our systems, we should use the following decision matrix to ch
 ### Conclusion
 
 We often treat JWT libraries as "plug and play," but the choice of `alg` in the header has massive security implications. For most general purposes, RS256 is acceptable. But as we build systems handling sensitive financial data or personal identity, moving to PS256 is not just an upgrade—it's a responsibility.
+
+---
