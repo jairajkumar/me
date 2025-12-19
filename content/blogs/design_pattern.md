@@ -4,7 +4,7 @@ date: '2025-05-19T15:44:03+05:30'
 draft: false
 author: 'Jairaj Kumar'
 slug: design-pattern
-categories: ["backend"]
+categories: ["backend", "design"]
 tags: ["design", "patterns", "coding", "software development"]
 description: ''
 ---
