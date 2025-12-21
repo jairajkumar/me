@@ -29,6 +29,8 @@ enableRobotsTXT: true
 taxonomies:
   tag: tags
   category: categories
+  opinion_tag: opinion_tags
+  opinion_category: opinion_categories
 
 #services:
   #googleAnalytics:
@@ -46,11 +48,16 @@ Menus:
       title: Blog posts
       url: /blogs
       weight: 1
+    - identifier: opinions
+      name: Opinions
+      title: Opinion pieces
+      url: /opinions
+      weight: 2
     - identifier: Categories # Uncomment if you plan to have categories
       name: Categories
       title: Categories
       url: /categories
-      weight: 2
+      weight: 3
     # - identifier: tags
     #   name: Tags
     #   title: Tags
@@ -64,6 +71,14 @@ Menus:
     # Add other menu items as needed
 
 params:
+  contentSections:
+    blogs:
+      recentTitle: "Recent Posts"
+      viewAllText: "View All Blogs"
+    opinions:
+      recentTitle: "Recent Opinions"
+      viewAllText: "View All Opinions"
+
   featuredBlogs:
     title: "Featured Posts"
     count: 3  # Number of featured posts to show
