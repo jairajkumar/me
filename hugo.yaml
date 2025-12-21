@@ -48,16 +48,16 @@ Menus:
       title: Blog posts
       url: /blogs
       weight: 1
-    - identifier: opinions
-      name: Opinions
-      title: Opinion pieces
-      url: /opinions
-      weight: 2
     - identifier: Categories # Uncomment if you plan to have categories
       name: Categories
       title: Categories
       url: /categories
-      weight: 3
+      weight: 2
+    # - identifier: opinions
+    #   name: Opinions
+    #   title: Opinion pieces
+    #   url: /opinions
+    #   weight: 3
     # - identifier: tags
     #   name: Tags
     #   title: Tags
