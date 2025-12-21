@@ -20,7 +20,10 @@ params:
     news:
       recentTitle: "Latest News"
       viewAllText: "View All News"
+      taxonomies: ["news_categories", "news_tags"]
 ```
+
+**Note on `taxonomies` field:** This tells the footer which taxonomy pages belong to this section. When viewing `/news-categories/` or `/news-tags/`, the footer will show "Latest News" recent posts instead of defaulting to blogs.
 
 #### 1b. Add to Navigation Menu
 
