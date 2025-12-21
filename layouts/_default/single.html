@@ -87,13 +87,20 @@
           </aside>
           {{ end }}
 
-          {{ $section := .Section }}
-          {{ $singularSection := strings.TrimSuffix "s" $section }}
-          {{ $tagsField := printf "%s_tags" $singularSection }}
+                    {{/* Find tags from contentSections taxonomies config */}}
+          {{ $sectionConfig := index .Site.Params.contentSections .Section }}
+          {{ $tagsField := "tags" }}
+          {{ $tagsUrl := "tags" }}
+          {{ if $sectionConfig }}
+          {{ range $sectionConfig.taxonomies }}
+          {{ if strings.Contains . "_tags" }}
+          {{ $tagsField = . }}
+          {{ $tagsUrl = . }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
           {{ $currentTags := index .Params $tagsField }}
-          {{ if not $currentTags }}{{ $currentTags = .Params.tags }}{{ end }}
-          {{ $tagsUrl := cond $currentTags (printf "%s_tags" $singularSection) "tags" }}
-          {{ if eq $currentTags .Params.tags }}{{ $tagsUrl = "tags" }}{{ end }}
+          {{ if not $currentTags }}{{ $currentTags = .Params.tags }}{{ $tagsUrl = "tags" }}{{ end }}
           {{ if $currentTags }}
           <aside class="tags">
             <h5>{{ .Site.Params.terms.tags | default "Tags" }}</h5>

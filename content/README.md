@@ -23,7 +23,8 @@ params:
       taxonomies: ["news_categories", "news_tags"]
 ```
 
-**Note on `taxonomies` field:** This tells the footer which taxonomy pages belong to this section. When viewing `/news-categories/` or `/news-tags/`, the footer will show "Latest News" recent posts instead of defaulting to blogs.
+**Note on `taxonomies` field:** This tells the footer which taxonomy pages belong to this section. When viewing `/news_categories/` or `/news_tags/`, the footer will show "Latest News" recent posts instead of defaulting to blogs.
+Use same in archtypes/template is must
 
 #### 1b. Add to Navigation Menu
 
