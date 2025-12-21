@@ -1,5 +1,13 @@
 {{/* Dynamically determine section and load config from contentSections */}}
 {{ $currentSection := .Section }}
+
+{{/* Check if current page type matches any section's taxonomies */}}
+{{ range $sectionName, $config := .Site.Params.contentSections }}
+{{ if in $config.taxonomies $.Type }}
+{{ $currentSection = $sectionName }}
+{{ end }}
+{{ end }}
+
 {{ $sectionConfig := index .Site.Params.contentSections $currentSection }}
 
 {{/* Fallback to default blogs section if current section not configured */}}

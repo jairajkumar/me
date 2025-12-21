@@ -4,12 +4,18 @@
 {{ end }}
 
 {{ define "title" }}
-{{.Title }} | {{ .Site.Title }}
+{{/* Clean taxonomy titles by splitting on _ and using last element */}}
+{{ $parts := split .Title "_" }}
+{{ $cleanTitle := index $parts (sub (len $parts) 1) | title }}
+{{ $cleanTitle }} | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
+{{/* Clean taxonomy titles for display */}}
+{{ $parts := split .Title "_" }}
+{{ $displayTitle := index $parts (sub (len (split .Title "_")) 1) | title }}
 <div class="container pt-5" id="list-page">
-    <h2 class="text-center pb-2">{{.Title}}</h2>
+    <h2 class="text-center pb-2">{{ $displayTitle }}</h2>
     <div class="row">
         {{ $pages := .Pages }}
         {{/* Check if this is a taxonomy term page for featured category */}}
