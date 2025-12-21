@@ -124,3 +124,30 @@ hugo new news/my-first-news.md
 | Blogs | `content/blogs/` | `archetypes/blogs.md` | `categories` |
 | Opinions | `content/opinions/` | `archetypes/opinions.md` | `opinion_categories` |
 | News | `content/news/` | `archetypes/news.md` | `news_categories` |
+
+---
+
+## Adding a Post to Featured Section
+
+Posts from **any section** can appear in the homepage Featured section.
+
+**Required front matter:**
+
+```yaml
+categories: ["featured"]
+featured: 5  # Higher number = appears first on homepage
+```
+
+**Note:** The `featured` number is **only used for homepage ordering**. On the `/categories/featured/` page, all featured posts are shown sorted by this value.
+
+**Example:** Adding an opinion to featured:
+
+```yaml
+---
+title: 'My Opinion Post'
+opinion_categories: ["thoughts"]
+opinion_tags: ["design"]
+categories: ["featured"]   # Add to featured
+featured: 5                 # Homepage order (higher = first)
+---
+```
