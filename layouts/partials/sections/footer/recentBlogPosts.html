@@ -1,11 +1,38 @@
-{{ $recentPostsPath := .Site.Params.footer.recentPosts.path | default "blogs" }}
-{{ $currentNumOfrecentPosts := len (where .Site.RegularPages "Type" $recentPostsPath) }} 
-{{ if and (not (and .IsSection (eq .Section $recentPostsPath))) (gt $currentNumOfrecentPosts 0) (.Site.Params.footer.recentPosts.enable | default false) }} 
+{{/* Dynamically determine section and load config from contentSections */}}
+{{ $currentSection := .Section }}
+
+{{/* Check if current page type matches any section's taxonomies */}}
+{{ range $sectionName, $config := .Site.Params.contentSections }}
+{{ if in $config.taxonomies $.Type }}
+{{ $currentSection = $sectionName }}
+{{ end }}
+{{ end }}
+
+{{ $sectionConfig := index .Site.Params.contentSections $currentSection }}
+
+{{/* Fallback to default blogs section if current section not configured */}}
+{{ if not $sectionConfig }}
+    {{ $currentSection = .Site.Params.footer.recentPosts.path | default "blogs" }}
+    {{ $sectionConfig = index .Site.Params.contentSections $currentSection }}
+{{ end }}
+
+{{/* Get section-specific config or use defaults */}}
+{{ $recentPostsPath := $currentSection }}
+{{ $recentPostsTitle := "Recent Posts" }}
+{{ $viewAllText := "View All" }}
+
+{{ if $sectionConfig }}
+    {{ $recentPostsTitle = $sectionConfig.recentTitle | default "Recent Posts" }}
+    {{ $viewAllText = $sectionConfig.viewAllText | default "View All" }}
+{{ end }}
+
+{{ $currentNumOfrecentPosts := len (where .Site.RegularPages "Type" $recentPostsPath) }}
+{{ if and (not (and .IsSection (eq .Section $recentPostsPath))) (gt $currentNumOfrecentPosts 0) (.Site.Params.footer.recentPosts.enable | default false) }}
 <div class="container py-3" id="recent-posts">
     {{ $recentPostsCount := .Site.Params.footer.recentPosts.count | default 3 }}
     {{ $recentPosts := where .Site.RegularPages "Section" $recentPostsPath | first $recentPostsCount }}
     <div class="h3 text-center text-secondary py-3">
-        {{ .Site.Params.footer.recentPosts.title | default "Recent Posts" }}
+        {{ $recentPostsTitle }}
     </div>
     <div class="row justify-content-center">
         {{ range $recentPosts }}
@@ -35,7 +62,7 @@
         {{ end }}
     </div>
     <div class="text-center pt-4">
-        <a href="{{ $recentPostsPath | relLangURL }}" class="btn btn-outline-primary rounded-pill">{{ .Site.Params.footer.recentPosts.viewAllText | default "View All Blogs" }}</a>
+        <a href="{{ $recentPostsPath | relLangURL }}" class="btn btn-outline-primary rounded-pill">{{ $viewAllText }}</a>
     </div>
 </div>
 {{ end }}

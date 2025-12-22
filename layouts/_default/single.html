@@ -87,19 +87,31 @@
           </aside>
           {{ end }}
 
-          {{ if .Params.tags }}
+                    {{/* Find tags from contentSections taxonomies config */}}
+          {{ $sectionConfig := index .Site.Params.contentSections .Section }}
+          {{ $tagsField := "tags" }}
+          {{ $tagsUrl := "tags" }}
+          {{ if $sectionConfig }}
+          {{ range $sectionConfig.taxonomies }}
+          {{ if strings.Contains . "_tags" }}
+          {{ $tagsField = . }}
+          {{ $tagsUrl = . }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ $currentTags := index .Params $tagsField }}
+          {{ if not $currentTags }}{{ $currentTags = .Params.tags }}{{ $tagsUrl = "tags" }}{{ end }}
+          {{ if $currentTags }}
           <aside class="tags">
             <h5>{{ .Site.Params.terms.tags | default "Tags" }}</h5>
             <ul class="tags-ul list-unstyled list-inline">
-              {{range .Params.tags}}
-              <li class="list-inline-item"><a href="{{`tags` | relURL}}/{{.| urlize}}"
-                {{ if site.Params.singlePages.tags.openInNewTab | default true }}target="_blank"{{ end }}
-              >{{.}}</a></li>
+              {{range $currentTags}}
+              <li class="list-inline-item"><a href="{{ $tagsUrl | relURL}}/{{.| urlize}}" {{ if
+                  site.Params.singlePages.tags.openInNewTab | default true }}target="_blank" {{ end }}>{{.}}</a></li>
               {{end}}
             </ul>
           </aside>
           {{end}}
-
           {{ if .Params.socialShare | default .Site.Params.singlePages.socialShare | default true }}
           <aside class="social">
             <h5>{{ .Site.Params.terms.social | default "Social" }}</h5>
