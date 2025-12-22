@@ -1,5 +1,5 @@
 ---
-title: 'Android Oems Losing Plot'
+title: 'Android OEMs Are Losing the Plot (And Apple is Winning by Default)'
 date: '2025-12-23T01:11:31+05:30'
 draft: false
 author: 'Jairaj Kumar'
