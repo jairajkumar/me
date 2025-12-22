@@ -24,7 +24,9 @@ params:
 ```
 
 **Note on `taxonomies` field:** This tells the footer which taxonomy pages belong to this section. When viewing `/news_categories/` or `/news_tags/`, the footer will show "Latest News" recent posts instead of defaulting to blogs.
-Use same in archtypes/template is must
+Use same in archetypes/template is a must.
+
+> ⚠️ **Important:** If you don't add your section to `contentSections`, the footer will fall back to showing "Recent Blogs" instead of your section's posts. This can be intentional for [unlisted/secret sections](#creating-an-unlisted-secret-section).
 
 #### 1b. Add to Navigation Menu
 
@@ -149,5 +151,135 @@ opinion_categories: ["thoughts"]
 opinion_tags: ["design"]
 categories: ["featured"]   # Add to featured
 featured: 5                 # Homepage order (higher = first)
+---
+```
+
+---
+
+## Creating an Unlisted (Secret) Section
+
+Use this when you want posts that are **only accessible via direct link** - great for sharing specific content privately without exposing other posts in the same section.
+
+### What "Unlisted" Means
+
+| Item | Behavior |
+|------|----------|
+| Section list page (`/section-name/`) | ❌ Returns 404 |
+| Individual posts (`/section-name/post/`) | ✅ Accessible via direct link |
+| "Recent Posts" in footer | ❌ Never shows posts from this section |
+| Menu navigation | ❌ No link in menu |
+| Search | ❌ Can be excluded (optional) |
+
+### Example: Making `/opinions` Unlisted
+
+#### Step 1: Mark Section as Draft
+
+Edit `content/opinions/_index.md`:
+
+```yaml
+---
+title: "Opinions"
+draft: true
+---
+```
+
+> **What this does:** The URL `/opinions/` will return 404. Individual posts remain accessible.
+
+#### Step 2: Remove from `contentSections`
+
+In `hugo.yaml`, comment out or remove the section from `contentSections`:
+
+```yaml
+params:
+  contentSections:
+    blogs:
+      recentTitle: "Recent Posts"
+      viewAllText: "View All Blogs"
+      taxonomies: ["categories", "tags"]
+    # opinions:                              # ← Comment out or remove
+    #   recentTitle: "Recent Opinions"
+    #   viewAllText: "View All Opinions"
+    #   taxonomies: ["opinion_categories", "opinion_tags"]
+```
+
+> **What this does:** "Recent Opinions" will never appear in the footer. When viewing an opinion post, the footer falls back to showing "Recent Posts" (blogs) instead.
+
+#### Step 3: Ensure Menu Link is Removed
+
+In `hugo.yaml`, make sure the section is not in the menu:
+
+```yaml
+Menus:
+  main:
+    - identifier: blog
+      name: Blogs
+      url: /blogs
+      weight: 1
+    # - identifier: opinions  # ← Keep this commented out
+    #   name: Opinions
+    #   url: /opinions
+    #   weight: 2
+```
+
+#### Step 4 (Optional): Exclude from Search
+
+Add this to individual posts to exclude from search:
+
+```yaml
+---
+title: 'My Secret Opinion'
+draft: false
+excludeFromSearch: true   # ← Excludes from site search
+---
+```
+
+### Summary: Unlisted Section Checklist
+
+| Step | Location | Change |
+|------|----------|--------|
+| 1 | `content/section/_index.md` | Add `draft: true` |
+| 2 | `hugo.yaml` | Remove section from `contentSections` |
+| 3 | `hugo.yaml` | Remove/comment section from `Menus.main` |
+| 4 | Individual posts (optional) | Add `excludeFromSearch: true` |
+
+### How It Works Internally
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  User visits /opinions/my-secret-post/                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  1. Post is visible (draft: false on the post itself)           │
+│                                                                  │
+│  2. Footer template looks for "opinions" in contentSections     │
+│     → Not found!                                                 │
+│                                                                  │
+│  3. Falls back to footer.recentPosts.path → "blogs"             │
+│                                                                  │
+│  4. Shows "Recent Posts" from blogs section                     │
+│     → No opinions exposed!                                       │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Important Notes
+
+> ⚠️ **Posts are still public!** Anyone with the direct link can access them. This is "security through obscurity" - suitable for non-sensitive content you just don't want discoverable.
+
+> 💡 **Cascade warning:** Do NOT use `cascade: draft: true` in `_index.md` - this will hide all individual posts too!
+
+```yaml
+# ❌ DON'T DO THIS (hides all posts)
+---
+title: "Opinions"
+draft: true
+cascade:
+  draft: true
+---
+
+# ✅ DO THIS (only hides section listing)
+---
+title: "Opinions"
+draft: true
 ---
 ```

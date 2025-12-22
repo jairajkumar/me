@@ -76,10 +76,10 @@ params:
       recentTitle: "Recent Posts"
       viewAllText: "View All Blogs"
       taxonomies: ["categories", "tags"]
-    opinions:
-      recentTitle: "Recent Opinions"
-      viewAllText: "View All Opinions"
-      taxonomies: ["opinion_categories", "opinion_tags"]
+    # opinions:
+    #   recentTitle: "Recent Opinions"
+    #   viewAllText: "View All Opinions"
+    #   taxonomies: ["opinion_categories", "opinion_tags"]
 
   featuredBlogs:
     title: "Featured Posts"

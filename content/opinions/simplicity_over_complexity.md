@@ -1,11 +1,12 @@
 ---
 title: 'Why Simplicity Beats Complexity in Software Design'
 date: '2025-12-21T03:43:00+05:30'
-draft: false
+draft: true
 author: 'Jairaj Kumar'
 excludeFromSearch: true # This is to exclude this post from search results
 opinion_categories: ["thoughts"]
 opinion_tags: ["software", "design"]
+slug: 'simplicity-over-complexity'
 description: 'A perspective on why simpler solutions often outperform complex ones'
 toc: true
 ---

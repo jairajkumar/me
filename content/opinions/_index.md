@@ -1,3 +1,4 @@
 ---
 title: "Opinions"
+draft: true
 ---
