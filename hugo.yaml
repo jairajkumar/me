@@ -4,6 +4,19 @@ languageCode: en-us
 title: "Jairaj Kumar | Software Engineer" # Updated Title
 theme: hugo-profile
 
+# Subfolders under content/blogs/ are for filesystem organisation only — they are
+# flattened back into content/blogs at build time, so URLs stay /blogs/<slug>/ and
+# no /blogs/<subfolder>/ section page is generated. To add another grouping folder,
+# add it to excludeFiles below plus a matching mount.
+module:
+  mounts:
+    - source: content
+      target: content
+      excludeFiles:
+        - 'blogs/system-design/**'
+    - source: content/blogs/system-design
+      target: content/blogs
+
 markup:
   highlight:
     codeFences: true         # Enable True for code fences
