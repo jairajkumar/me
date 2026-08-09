@@ -1,6 +1,6 @@
 ---
 title: "Non-Functional Requirements: How to Say 'Fast and Reliable' Like a Senior"
-date: '2026-05-1T23:05:11+05:30'
+date: '2026-05-01T23:05:11+05:30'
 draft: false
 author: 'Jairaj Kumar'
 categories: ["backend", "Design"]
